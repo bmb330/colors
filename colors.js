@@ -19,9 +19,7 @@ const sassToCss = (color) => {
   }).css.toString();
 };
 
-const cssToJson = (css) => {
-  return cssjson.toJSON(css);
-};
+const cssToJson = (css) => cssjson.toJSON(css);
 
 const extractColors = (json) => {
   let elems = [];
@@ -36,27 +34,15 @@ const extractColors = (json) => {
   return elems;
 };
 
-const formatRgb = (color) => {
-  return `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
-};
+const formatRgb = (color) => `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
 
-const isHex = (color) => {
-  return hexReg.test(color);
-};
+const isHex = (color) => hexReg.test(color);
 
-const isRgb = (color) => {
-  return rgbReg.test(color);
-};
+const isRgb = (color) => rgbReg.test(color);
 
-const parseHex = (color) => {
-  return extractColors(cssToJson(sassToCss(color)));
-};
+const parseHex = (color) => extractColors(cssToJson(sassToCss(color)));
 
-const parseRgb = (color) => {
-  return parseHex(color).map(hex => {
-    return formatRgb(hexRgb(hex));
-  });
-};
+const parseRgb = (color) => parseHex(color).map(hex => formatRgb(hexRgb(hex)));
 
 module.exports = {
   parseColor (color) {
