@@ -1,0 +1,21 @@
+{
+  "name": "colors",
+  "version": "1.0.0",
+  "description": "Web service to return a json array consisting of 10/20% lighter/darker than the supplied hex/rgb code, in the same format",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "color"
+  ],
+  "author": "Brandon Braun",
+  "license": "MIT",
+  "dependencies": {
+    "colornames": "^1.1.1",
+    "cssjson": "^2.1.3",
+    "express": "^4.13.4",
+    "hex-rgb": "^1.0.0",
+    "node-sass": "^3.4.2"
+  }
+}
